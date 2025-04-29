@@ -9,11 +9,11 @@ Built using Java GUI (Swing) for the frontend and Oracle Database for the backen
 - Delivery Staff Management: Add delivery personnel with contact details for order assignment.
 - Customer Portal: Customers can register, log in, browse menus, and add items to their cart.
 - Order Placement: Customers can place orders with automatic email confirmation.
-- Email Integration: On successful order placement, an email is sent to the customer with:
+- Email Integration: On successful order placement, an email is sent to the customer with: 1. OTP for order verification
+                                                                                           2. Assigned delivery staff name and contact number
+                                                                                           3. Order summary including food item details
   
-                                                                                         1. OTP for order verification
-                                                                                         2. Assigned delivery staff name and contact number
-                                                                                         3. Order summary including food item details
+                                                                                         
 
 🧩 Technologies Used
 
