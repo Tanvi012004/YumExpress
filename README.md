@@ -48,61 +48,6 @@ These are stored inside the lib/ folder:
 13. unirest-java-1.4.7.jar
 Ensure NetBeans is set to include these JARs in the project libraries.
 
-Database Schema:
-
-The application uses an Oracle -compatible relational schema with the following tables:
-
-🔸 COMPANIES
-
-Column	        Type	         Description
-COMPANY_ID	   VARCHAR(10)	   Primary Key
-COMPANY_NAME	 VARCHAR(100)	   Name of the company
-OWNER_NAME	   VARCHAR(50)	   Owner of the company
-PASSWORD	     VARCHAR(20)	   Login password
-STATUS	       VARCHAR(50)	   Company status (Active/etc.)
-EMAIL_ID	     VARCHAR(100)	   Company email
-SECURITY_KEY	 VARCHAR(100)	   Secret key for verification
-
-🔸 STAFF
-
-Column	       Type	        Description
-STAFF_ID	     VARCHAR(10)	Primary Key
-COMPANY_ID	   VARCHAR(30)	Foreign Key to COMPANIES
-EMAIL_ID	     VARCHAR(30)	Staff login email
-PASSWORD	     VARCHAR(30)	Staff password
-STAFF_NAME	   VARCHAR(50)	Staff member’s name
-
-🔸 PRODUCTS
-
-Column	         Type	         Description
-PRODUCT_ID	    VARCHAR(10)	   Primary Key
-COMPANY_ID	    VARCHAR(10)	   Foreign Key to COMPANIES
-PRODUCT_NAME	  VARCHAR(50)	   Name of the product
-PRODUCT_PRICE	  NUMBER(7,2)	   Product cost
-PRODUCT_IMAGE	  BLOB	         Product image (optional display)
-
-🔸 ORDERS
-
-Column	        Type	         Description
-ORDER_ID	    VARCHAR(10)	    Primary Key
-PRODUCT_ID	  VARCHAR(10)	    Foreign Key to PRODUCTS
-CUSTOMER_ID	  VARCHAR(10)	    Foreign Key to CUSTOMERS
-STAFF_ID	    VARCHAR(10)	    Handled by (foreign key)
-REVIEW	      VARCHAR(200)	  Optional product review
-STATUS	      VARCHAR(50)	    Order status (Pending/Done)
-COMPANY_ID	  VARCHAR(10)	    Foreign Key to COMPANIES
-OTP	          NUMBER(10)	    One-time passcode for delivery
-
-🔸 CUSTOMERS
-
-Column	           Type	         Description: 
-CUSTOMER_ID	      VARCHAR(10)	   Primary Key
-CUSTOMER_NAME	    VARCHAR(50)	   Full name
-EMAIL_ID	        VARCHAR(30)	   Unique login email
-PASSWORD	        VARCHAR(20)	   Login password
-MOBILE_NO	        VARCHAR(10)	   Contact number
-ADDRESS	          VARCHAR(150)	 Shipping/Billing address
-
 🧩 Notes:
 Use Oracle/MySQL VARCHAR and BLOB types appropriately depending on your DBMS.
 Default password fields are stored as plain text—consider encrypting in a real-world scenario.
